@@ -606,11 +606,11 @@ function abrirValka(){
         `,
 
         `
-        <img src="./assets/img/cavaleiros/astrid1.jpg">
-        <img src="./assets/img/cavaleiros/astrid2.jpg">
-        <img src="./assets/img/cavaleiros/astrid3.jpg">
-        <img src="./assets/img/cavaleiros/astrid4.jpg">
-        <img src="./assets/img/cavaleiros/astrid5.jpg">
+        <img src="./assets/img/cavaleiros/valka1.jpg">
+        <img src="./assets/img/cavaleiros/valka2.jpg">
+        <img src="./assets/img/cavaleiros/valka3.jpg">
+        <img src="./assets/img/cavaleiros/valka4.jpg">
+        <img src="./assets/img/cavaleiros/valka5.jpg">
         `
     );
 }
