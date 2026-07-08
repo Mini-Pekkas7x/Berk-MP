@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragões de Berk</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<div id="dragonModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <h1 id="modalTitulo"></h1>
+
+        <img id="modalImagem">
+
+        <div id="modalGaleria" class="galeria"></div>
+
+        <p id="modalDescricao"></p>
+
+        <div id="modalInfo"></div>
+    </div>
+
+</div>
+
+<div id="classeModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="closeClasse">&times;</span>
+
+        <h1 id="classeTitulo"></h1>
+
+        <img id="classeImagem">
+
+        <p id="classeDescricao"></p>
+
+        <div id="classeGaleria" class="galeriaClasse"></div>
+
+    </div>
+
+</div>
+
+<div id="fotoModal" class="modal">
+
+    <span class="closeFoto">&times;</span>
+
+    <img id="fotoGrande">
+
+</div>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="topo">
+
+            <div>
+                <img src="./assets/img/logos e fundo/logomp2.png" class="img" alt="Logo MP">
+            </div>
+
+            <div class="httyd">HTTYD-MP</div>
+
+            <div>
+                <img src="./assets/img/logos e fundo/logo.png" class="img" alt="Logo HTTYD">
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="#home">
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="#dragons">
+                <i class="fa-solid fa-dragon"></i>
+                <span>Dragões</span>
+            </a>
+
+            <a href="#characters">
+                <i class="fa-solid fa-people-group"></i>
+                <span>Cavaleiros</span>
+            </a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+
+            <div class="overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="subtitulo">
+                    Bem-vindo ao universo de
+                </p>
+
+                <h1>
+                    Vikings e Dragões
+                </h1>
+
+                <p class="descricao">
+                    Conheça dragões incríveis, guerreiros vikings e as lendas que marcaram a ilha de Berk.
+                </p>
+
+            </div>
+
+        </section>
+
+            <!-- Categorias -->
+
+            <div class="categorias">
+
+                <div class="tituloclass">Classes:</div>
+
+                <div class="categoria" onclick="abrirBrasa()">Brasa</div>
+
+                <div class="categoria" onclick="abrirRocha()">Rocha</div>
+
+                <div class="categoria" onclick="abrirRastro()">Rastreadora</div>
+
+                <div class="categoria" onclick="abrirAtaque()">Ataque</div>
+
+                <div class="categoria" onclick="abrirAfiada()">Afiada</div>
+
+                <div class="categoria" onclick="abrirMar()">Marinha</div>
+
+                <div class="categoria" onclick="abrirMisterio()">Mistério</div>
+
+            </div>
+
+            <div class="titulomeio" id="dragons">Dragões:</div>
+
+        <section class="dragons-grid">
+
+            <div class="card" onclick="abrirBanguela()">
+
+                <h2>Fúria da Noite</h2>
+
+                <p>O dragão mais raro e poderoso de Berk.</p>
+
+                <img src="./assets/img/dragoes/banguela4.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirNadder()">
+
+                <h2>Nadder Mortal</h2>
+
+                <p>
+                    Dragão veloz e parceiro fiel de Astrid.
+                </p>
+
+                <img src="./assets/img/dragoes/nadder1.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirPesadelo()">
+
+                <h2>Pesadelo Monstruoso</h2>
+
+                <p>
+                    Um dos dragões mais agressivos de Berk.
+                </p>
+
+                <img src="./assets/img/dragoes/Pesadelo3.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirZipper()">
+
+                <h2>Zíperarrepiante</h2>
+
+                <p>
+                    Dragão de duas cabeças rápido e imprevisível.
+                </p>
+
+                <img src="./assets/img/dragoes/Zipper4.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirGronckie()">
+
+                <h2>Gronckle</h2>
+
+                <p>
+                    Dragão robusto conhecido por sua resistência.
+                </p>
+
+                <img src="./assets/img/dragoes/Gronckie1.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirTerror()">
+
+                <h2>Terror Terrível</h2>
+
+                <p>
+                    Pequeno dragão rápido e muito barulhento.
+                </p>
+
+                <img src="./assets/img/dragoes/Terror1.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirCorta()">
+
+                <h2>Corta-Tormenta</h2>
+
+                <p>
+                    Dragão extremamente veloz e adaptado a tempestades.
+                </p>
+
+                <img src="./assets/img/dragoes/corta1.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirTambor()">
+
+                <h2>Tambor Trovão</h2>
+
+                <p>
+                    Dragão capaz de produzir poderosas ondas sonoras.
+                </p>
+
+                <img src="./assets/img/dragoes/tambor1.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirChifre()">
+
+                <h2>Chifre Estrondoso</h2>
+
+                <p>
+                    Dragão gigantesco conhecido por sua força devastadora.
+                </p>
+
+                <img src="./assets/img/dragoes/chifre3.jpg" class="ftdragons">
+
+            </div>
+
+                        <div class="card" onclick="abrirLuz()">
+
+                <h2>Fúria da Luz</h2>
+
+                <p>
+                    Dragão raro e elegante, capaz de se camuflar e disparar rajadas de plasma.
+                </p>
+
+                <img src="./assets/img/dragoes/luz1.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirMormurante()">
+
+                <h2>Morte Murmurante</h2>
+
+                <p>
+                    Dragão gigante que vive sob a terra e destrói tudo com suas enormes mandíbulas.
+                </p>
+
+                <img src="./assets/img/dragoes/mormurante2.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirRaio()">
+
+                <h2>Estridente</h2>
+
+                <p>
+                    Dragão veloz conhecido por seus ataques rápidos e gritos ensurdecedores.
+                </p>
+
+                <img src="./assets/img/dragoes/raio1.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirTriplo()">
+
+                <h2>Ataque-Triplo</h2>
+
+                <p>
+                    Dragão de três caudas capaz de lançar múltiplos ataques simultaneamente.
+                </p>
+
+                <img src="./assets/img/dragoes/triplo4.jpg" class="ftdragons">
+
+            </div>
+
+            <div class="card" onclick="abrirMorte()">
+
+                <h2>Canção da Morte</h2>
+
+                <p>
+                    Um dos dragões mais perigosos, famoso por seu canto hipnótico.
+                </p>
+
+                <img src="./assets/img/dragoes/morte2.jpg" class="ftdragons">
+
+            </div>
+
+        </section>
+
+        <!-- PERSONAGENS -->
+        <div class="titulomeio" id="characters">Cavaleiros:</div>
+
+        <section class="personagens">
+
+            <div class="card" onclick="abrirSoluco()">
+
+                <img src="./assets/img/Cavaleiros/soluco1.jpg" class="ftpersonagem">
+
+                <h2>Soluço</h2>
+
+                <p>
+                    Líder de Berk e melhor amigo do Banguela.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="abrirAstrid()">
+
+                <img src="./assets/img/Cavaleiros/astrid1.jpg" class="ftpersonagem">
+
+                <h2>Astrid</h2>
+
+                <p>
+                    Guerreira viking e treinadora de dragões.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="abrirMelequento()">
+
+                <img src="./assets/img/Cavaleiros/melequento1.jpg" class="ftpersonagem">
+
+                <h2>Melequento</h2>
+
+                <p>
+                    Ferreiro habilidoso e aliado de Berk.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="abrirPeixe()">
+
+                <img src="./assets/img/Cavaleiros/peixe4.jpg" class="ftpersonagem">
+
+                <h2>Perna de Peixe</h2>
+
+                <p>
+                    Grande conhecedor das espécies de dragões.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="abrirDura()">
+
+                <img src="./assets/img/Cavaleiros/dura1.jpg" class="ftpersonagem">
+
+                <h2>Cabeça Dura</h2>
+
+                <p>
+                    Guerreiro divertido e irmão gêmeo de Cabeça Quente.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="abrirQuente()">
+
+                <img src="./assets/img/Cavaleiros/quente1.jpg" class="ftpersonagem">
+
+                <h2>Cabeça Quente</h2>
+
+                <p>
+                    Guerreira impulsiva e irmã gêmea de Cabeça Dura.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="abrirStoico()">
+
+                <img src="./assets/img/Cavaleiros/stoico1.jpg" class="ftpersonagem">
+
+                <h2>Stoico</h2>
+
+                <p>
+                    Chefe viking lendário e pai de Soluço.
+                </p>
+
+            </div>
+
+            <div class="card" onclick="abrirValka()">
+
+                <img src="./assets/img/Cavaleiros/valka1.jpg" class="ftpersonagem">
+
+                <h2>Valka</h2>
+
+                <p>
+                    Defensora dos dragões e mãe de Soluço.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 - Mundo dos Dragões
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="dragoes.js"></script>
+    <script src="cavaleiros.js"></script>
+    <script src="classes.js"></script>
+</body>
+
+</html>

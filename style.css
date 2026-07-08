@@ -1,0 +1,1011 @@
+@charset "UTF-8"; /* Define a codificação do arquivo para suportar caracteres especiais (ç, á, é, etc.) */
+
+/* =========================
+Remove estilos padrão do navegador
+========================= */
+
+* {
+  margin: 0;          /* Remove as margens padrão de todos os elementos */
+  padding: 0;         /* Remove os espaçamentos internos padrão */
+  box-sizing: border-box; /* Faz com que width e height incluam padding e borda */
+}
+
+html {
+  scroll-behavior: smooth; /* Deixa a rolagem da página suave ao navegar por âncoras */
+}
+
+:root{
+    --cor-fundo:#0d0a18;
+    --cor-card:#161125;
+    --cor-footer:#09070f;
+    --cor-roxa: #a855f7;
+    --cor-roxa-clara:#c084fc;
+    --cor-texto:#ffffff;
+    --cor-texto-secundario:#d8d5e5;
+    --cor-texto-claro:#d3d0de;
+    --borda-roxa:rgba(168,85,247,.35);
+}
+
+body {
+  background: var(--cor-fundo);      /* Define a cor de fundo da página */
+  color: #fff;              /* Define a cor padrão do texto como branco */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte utilizada no site */
+  overflow-x: hidden;       /* Impede a rolagem horizontal da página */
+}
+
+/* =========================
+HEADER
+Barra de navegação fixa no topo
+========================= */
+
+header {
+  position: fixed; /* Mantém o cabeçalho fixo no topo da tela */
+  top: 0; /* Posiciona o header no topo */
+  width: 100%; /* Ocupa toda a largura da tela */
+  height: 110px; /* Define a altura do cabeçalho */
+
+  display: flex; /* Utiliza Flexbox para organizar os elementos */
+  justify-content: space-between; /* Coloca um elemento em cada extremidade */
+  align-items: center; /* Centraliza os itens verticalmente */
+
+  padding: 0 8%; /* Espaçamento interno nas laterais */
+
+  background: rgba(10, 8, 20, .8); /* Fundo escuro com transparência */
+  backdrop-filter: blur(15px); /* Aplica efeito de desfoque no fundo */
+
+  z-index: 1000; /* Mantém o header acima dos demais elementos */
+
+  border-bottom: 1px solid rgba(168, 85, 247, .2); /* Linha inferior com transparência */
+}
+
+/* Área da logo e do título */
+.topo {
+  display: flex; /* Organiza logo e texto lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 20px; /* Espaço entre a logo e o título */
+
+  font-size: 1.6rem; /* Tamanho do texto */
+  font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Logo */
+.img {
+  width: 75px; /* Largura da imagem */
+  object-fit: contain; /* Mantém a proporção da imagem sem cortar */
+}
+
+/* Menu de navegação */
+nav {
+  display: flex; /* Organiza os links em linha */
+  gap: 40px; /* Espaço entre os links */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Cada link do menu */
+nav a {
+  display: flex;
+  flex-direction: column; /* Coloca o ícone acima do texto */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+
+  gap: 6px; /* Espaço entre o ícone e o texto */
+
+  color: var(--cor-texto); /* Cor padrão dos links */
+  text-decoration: none; /* Remove o sublinhado */
+  transition: .3s; /* Anima as mudanças de estilo */
+}
+
+/* Ícones do menu */
+nav a i {
+  font-size: 1.4rem; /* Tamanho do ícone */
+}
+
+/* Texto abaixo do ícone */
+nav a span {
+  font-size: 0.9rem; /* Tamanho do texto */
+}
+
+/* Efeito ao passar o mouse sobre o link */
+nav a:hover {
+  color: var(--cor-roxa); /* Altera a cor para roxo */
+}
+
+/* =========================
+HERO
+========================= */
+.hero {
+  min-height: 100vh; /* Faz a seção ocupar no mínimo toda a altura da tela */
+
+  display: flex; /* Utiliza Flexbox */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+
+  padding: 0 10%; /* Espaçamento interno nas laterais */
+
+  background:
+    /* Gradiente escuro sobre a imagem para melhorar a leitura do texto */
+    linear-gradient(rgba(8, 5, 20, .55),
+      rgba(13, 10, 24, .75)),
+    url("./assets/img/logos e fundo/bg3.jpg"); /* Imagem de fundo */
+
+  background-size: cover; /* Faz a imagem preencher toda a seção */
+  background-position: center; /* Centraliza a imagem */
+}
+
+/* Área onde ficam os textos da Hero */
+.hero-content {
+  max-width: 700px; /* Limita a largura máxima do conteúdo */
+}
+
+/* Texto acima do título principal */
+.subtitulo {
+  color: var(--cor-roxa); /* Cor roxa */
+  margin-bottom: 15px; /* Espaço abaixo do subtítulo */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 50px; /* Sobrescreve o tamanho anterior */
+  -webkit-text-stroke: var(--cor-texto) 1px; /* Contorno branco nas letras */
+}
+
+/* Título principal */
+.hero h1 {
+  font-size: clamp(4rem, 8vw, 7rem);
+  /* Ajusta o tamanho automaticamente conforme a largura da tela */
+
+  line-height: 1; /* Remove espaço extra entre linhas */
+
+  margin-bottom: 25px; /* Espaço abaixo do título */
+
+  text-shadow:
+    0 0 20px rgba(168, 85, 247, .4);
+    /* Adiciona um brilho roxo ao texto */
+}
+
+/* Parágrafo de descrição */
+.descricao {
+  color: var(--cor-texto-claro); /* Cor do texto */
+  line-height: 1.8; /* Espaçamento entre linhas */
+  font-size: 23px; /* Sobrescreve o tamanho anterior */
+}
+
+/* Estilo do texto "How To Train Your Dragon" */
+.httyd {
+    font-family: 'Arial Black', sans-serif; /* Fonte em negrito */
+    font-size: 2.5rem; /* Tamanho da fonte */
+    font-weight: 900; /* Peso máximo da fonte */
+    color: var(--cor-texto); /* Cor branca */
+    text-transform: uppercase; /* Deixa todas as letras maiúsculas */
+    letter-spacing: 3px; /* Espaçamento entre as letras */
+
+    /* Brilho suave no texto */
+    text-shadow:
+        0 0 3px rgba(255,255,255,0.5),
+        0 0 6px rgba(255,255,255,0.3);
+
+    display: inline-block; /* Permite aplicar efeitos mantendo o texto em linha */
+}
+
+/* =========================
+SEÇÕES
+========================= */
+.dragons-grid,
+.personagens {
+  padding: 100px 8%;
+  /* Adiciona espaçamento interno:
+    - 100px em cima e embaixo
+     - 8% nas laterais */
+}
+
+/* =========================
+CATEGORIAS
+========================= */
+/* Container que organiza todos os botões */
+.categorias {
+  display: flex; /* Organiza os botões em linha */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  flex-wrap: wrap; /* Permite que os botões quebrem para outra linha */
+
+  margin-top: 50px; /* Espaço acima das categorias */
+
+  gap: 15px; /* Espaço entre os botões */
+
+  margin-bottom: 50px; /* Espaço abaixo das categorias */
+
+  grid-column: 1/-1; /* Ocupa todas as colunas caso esteja dentro de um Grid */
+}
+
+/* Estilo de cada botão de categoria */
+.categoria {
+  padding: 12px 24px; /* Espaçamento interno */
+
+  border-radius: 999px; /* Deixa o botão totalmente arredondado */
+
+  background: rgba(168, 85, 247, .1); /* Fundo roxo transparente */
+
+  border: 1px solid rgba(168, 85, 247, .4); /* Borda roxa */
+
+  color: var(--cor-roxa-clara); /* Cor do texto */
+
+  font-weight: bold; /* Texto em negrito */
+
+  transition: .3s; /* Anima as mudanças de estilo */
+}
+
+/* Efeito ao passar o mouse */
+.categoria:hover {
+  background: var(--cor-roxa); /* Fundo fica roxo */
+
+  color: var(--cor-texto); /* Texto fica branco */
+
+  transform: translateY(-3px); /* Move o botão levemente para cima */
+
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* =========================
+GRID DRAGÕES
+========================= */
+
+/* Container que organiza os cards */
+.dragons-grid {
+  display: grid; /* Utiliza CSS Grid */
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+  /* Cria colunas automaticamente.
+     Cada card terá no mínimo 280px e crescerá para ocupar o espaço disponível. */
+
+  gap: 25px; /* Espaço entre os cards */
+}
+
+/* Título dos cards de dragões */
+.dragons-grid h2 {
+  font-size: 20px; /* Define o tamanho do título */
+}
+
+/* =========================
+CARDS
+========================= */
+
+/* Card */
+.card {
+  background: var(--cor-card); /* Cor de fundo do card */
+
+  border: 1px solid rgba(168, 85, 247, .15);
+  /* Borda roxa com transparência */
+
+  border-radius: 20px; /* Arredonda os cantos */
+
+  padding: 20px; /* Espaçamento interno */
+
+  transition: .35s; /* Suaviza as animações */
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+  transform: translateY(-8px);
+  /* Move o card levemente para cima */
+
+  box-shadow:
+    0 0 25px rgba(168, 85, 247, .25);
+  /* Adiciona um brilho roxo ao redor */
+}
+
+/* Título do card */
+.card h2 {
+  color: var(--cor-roxa-clara); /* Cor roxa */
+
+  margin-bottom: 15px; /* Espaço abaixo do título */
+
+  font-size: 1.8rem; /* Tamanho da fonte */
+}
+
+/* Texto do card */
+.card p {
+  color: var(--cor-texto-claro); /* Cor do texto */
+
+  line-height: 1.6; /* Espaçamento entre linhas */
+
+  margin-bottom: 20px; /* Espaço abaixo do parágrafo */
+}
+
+/* =========================
+IMAGENS DRAGÕES
+========================= */
+
+.ftdragons {
+  width: 100%;
+  /* Faz a imagem ocupar toda a largura do card */
+
+  aspect-ratio: 1 / 1;
+  /* Mantém a imagem sempre em formato quadrado */
+
+  object-fit: cover;
+  /* Preenche todo o espaço sem distorcer a imagem,
+     cortando as bordas se necessário */
+
+  border-radius: 15px;
+  /* Arredonda os cantos da imagem */
+
+  border: 2px solid rgba(168, 85, 247, .4);
+  /* Adiciona uma borda roxa com transparência */
+}
+
+/* =========================
+PERSONAGENS
+========================= */
+
+/* Container que organiza os cards dos personagens */
+.personagens {
+  display: grid; /* Utiliza CSS Grid */
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+  /* Cria colunas automaticamente.
+     Cada card terá no mínimo 260px e crescerá para ocupar o espaço disponível. */
+
+  gap: 25px; /* Espaço entre os cards */
+}
+
+/* Imagem principal de cada personagem */
+.ftpersonagem {
+  width: 100%;
+  /* Faz a imagem ocupar toda a largura do card */
+
+  aspect-ratio: 3 / 4;
+  /* Mantém a imagem na proporção 3:4 (retrato) */
+
+  object-fit: cover;
+  /* Preenche todo o espaço sem distorcer a imagem,
+     cortando as bordas se necessário */
+
+  border-radius: 15px;
+  /* Arredonda os cantos da imagem */
+
+  margin-bottom: 20px;
+  /* Espaço entre a imagem e o conteúdo abaixo */
+
+  border: 2px solid rgba(168, 85, 247, .4);
+  /* Adiciona uma borda roxa com transparência */
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  /* Centraliza o texto do rodapé */
+
+  padding: 40px;
+  /* Adiciona espaçamento interno em todos os lados */
+
+  background: var(--cor-footer);
+  /* Define a cor de fundo do rodapé */
+
+  color: #b8b2ca;
+  /* Define a cor do texto */
+
+  border-top: 1px solid rgba(168, 85, 247, .15);
+  /* Adiciona uma borda superior roxa com transparência */
+}
+
+/* =========================
+  BARRA DE ROLAGEM
+  Personalização da scrollbar (Chrome, Edge e Opera)
+========================= */
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: var(--cor-fundo);
+}
+
+/* Parte que pode ser arrastada */
+::-webkit-scrollbar-thumb {
+  background: var(--cor-roxa); /* Cor roxa */
+  border-radius: 999px; /* Deixa a barra totalmente arredondada */
+}
+
+/* =========================
+  TÍTULOS
+========================= */
+
+/* Título principal das seções */
+.titulomeio {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* Define a fonte */
+
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  /* Ajusta o tamanho automaticamente conforme a tela */
+
+  line-height: 1;
+  /* Remove espaçamento extra entre linhas */
+
+  text-align: center;
+  /* Centraliza o texto */
+
+  margin-bottom: 25px;
+  /* Espaço abaixo do título */
+
+  -webkit-text-stroke: 2px var(--cor-roxa);
+  /* Adiciona um contorno roxo */
+
+  text-shadow:
+    0 0 50px rgba(168, 85, 247, .4);
+  /* Adiciona um brilho roxo */
+}
+
+/* Título das classes de dragões */
+.tituloclass {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* Define a fonte */
+
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  /* Ajusta o tamanho automaticamente conforme a tela */
+
+  font-weight: 700;
+  /* Deixa o texto em negrito */
+
+  color: #fff;
+  /* Cor branca */
+
+  -webkit-text-stroke: 0.5px var(--cor-roxa);
+  /* Contorno roxo mais fino */
+
+  text-shadow:
+    0 0 35px rgba(168, 85, 247, .3);
+  /* Adiciona um brilho suave */
+
+  margin-right: 15px;
+  /* Espaço à direita do título */
+}
+
+/* =========================
+  RESPONSIVO
+  Ajustes para telas de até 900px (tablets e celulares)
+========================= */
+
+@media (max-width: 900px) {
+
+  /* Cabeçalho */
+  header {
+    padding: 0 20px;
+    /* Diminui o espaçamento lateral */
+  }
+
+  /* Menu de navegação */
+  nav {
+    display: none;
+    /* Oculta o menu em telas menores */
+  }
+
+  /* Área da logo e título */
+  .topo {
+    font-size: 1.2rem;
+    /* Reduz o tamanho do texto */
+  }
+
+  /* Logo */
+  .img {
+    width: 55px;
+    /* Diminui o tamanho da logo */
+  }
+
+  /* Seção Hero */
+  .hero {
+    text-align: center;
+    /* Centraliza o texto */
+
+    justify-content: center;
+    /* Centraliza todo o conteúdo horizontalmente */
+  }
+
+  /* Conteúdo da Hero */
+  .hero-content {
+    max-width: 100%;
+    /* Permite que o conteúdo utilize toda a largura disponível */
+  }
+
+  /* Texto da descrição */
+  .descricao {
+    font-size: 1.1rem;
+    /* Reduz o tamanho da fonte */
+  }
+
+  /* Seções de dragões e personagens */
+  .dragons-grid,
+  .personagens {
+    padding: 70px 20px;
+    /* Diminui o espaçamento para aproveitar melhor a tela */
+  }
+
+}
+
+/* =========================
+  MODAL
+  Janela que exibe as informações dos dragões e classes
+========================= */
+
+/* Fundo escurecido do modal */
+.modal {
+    display: none;
+    /* O modal inicia oculto */
+
+    position: fixed;
+    /* Fica fixo na tela */
+
+    inset: 0;
+    /* Ocupa toda a tela */
+
+    background: rgba(0,0,0,.75);
+    /* Fundo preto transparente */
+
+    backdrop-filter: blur(8px);
+    /* Aplica um desfoque no conteúdo atrás do modal */
+
+    justify-content: center;
+    /* Centraliza horizontalmente */
+
+    align-items: center;
+    /* Centraliza verticalmente */
+
+    z-index: 99999;
+    /* Mantém o modal acima de todos os elementos */
+
+    padding: 30px;
+    /* Espaçamento entre o modal e as bordas da tela */
+}
+
+/* Caixa principal do modal */
+.modal-content {
+
+    background: linear-gradient(180deg,#1a1330,#151022);
+    /* Fundo em degradê */
+
+    width: 90%;
+    /* Ajusta a largura ao conteúdo */
+
+    max-width: 1100px;
+    /* Limita a largura a 80% da tela */
+
+    max-height: 90vh;
+    /* Limita a altura a 90% da tela */
+
+    overflow-y: auto;
+    /* Adiciona rolagem vertical quando necessário */
+
+    padding: 35px;
+    /* Espaçamento interno */
+
+    border-radius: 20px;
+    /* Arredonda os cantos */
+
+    border: 2px solid var(--borda-roxa);
+    /* Borda roxa */
+
+    box-shadow:
+        0 0 40px rgba(168,85,247,.25);
+    /* Brilho ao redor do modal */
+
+    animation: zoom .25s ease;
+    /* Animação de abertura */
+}
+
+/* =========================
+  Barra de rolagem do modal
+========================= */
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+    /* Largura da barra de rolagem */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--cor-roxa);
+    /* Cor da barra */
+
+    border-radius: 999px;
+    /* Barra arredondada */
+}
+
+/* =========================
+  Botões de fechar
+========================= */
+
+/* Modal de dragões */
+.close,
+.closeClasse,
+.closeFoto{
+
+    float:right;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:var(--cor-texto);
+
+    transition:.3s;
+
+}
+
+.close:hover,
+.closeClasse:hover,
+.closeFoto:hover{
+    color:var(--cor-roxa);
+    transform:rotate(90deg);
+}
+
+.closeFoto{
+    margin-right:35px;
+}
+/* =========================
+  Títulos
+========================= */
+
+#modalTitulo {
+
+    color: var(--cor-roxa-clara);
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    text-shadow: 0 0 20px var(--borda-roxa)
+    /* Brilho roxo */
+}
+
+#classeTitulo {
+
+    color: var(--cor-roxa-clara);
+
+    -webkit-text-stroke: 0.8px var(--cor-roxa);
+    /* Contorno */
+
+    text-shadow: 2px 2px 20px var(--cor-roxa);
+    /* Brilho */
+}
+
+/* =========================
+  Imagens
+========================= */
+
+/* Imagem do dragão */
+#modalImagem {
+
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 70vh;
+
+    object-fit: cover;
+    /* Preenche sem distorcer */
+
+    border-radius: 20px;
+
+    border: 5px solid var(--borda-roxa);
+
+    margin: 0 auto 25px;
+    /* Centraliza a imagem */
+
+    box-shadow: 0 0 30px var(--cor-roxa);
+}
+
+/* Logo da classe */
+#classeImagem {
+
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 70vh;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+    /* Deixa a imagem redonda */
+
+    border: 5px solid var(--borda-roxa);
+
+    margin: 15px auto 30px;
+
+    box-shadow: 0 0 30px var(--cor-roxa);
+}
+
+/* =========================
+  Descrição
+========================= */
+
+/* Texto do dragão */
+#modalDescricao {
+
+    max-width: 600px;
+    /* Limita a largura do texto */
+
+    margin: 0 auto 35px;
+    /* Centraliza */
+
+    font-size: 25px;
+
+    line-height: 1.8;
+    /* Espaçamento entre linhas */
+
+    color: var(--cor-texto-secundario);
+
+    text-align: center;
+}
+
+/* Texto da classe */
+#classeDescricao {
+
+    font-size:25px;
+
+    color:var(--cor-texto-secundario);
+
+    text-align:center;
+
+    max-width:600px;
+
+    margin:0 auto 35px;
+}
+/* =========================
+  Informações
+========================= */
+
+/* Grid das informações */
+#modalInfo {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    /* Divide em duas colunas */
+
+    gap: 18px;
+    /* Espaço entre os blocos */
+
+    margin-top: 25px;
+}
+
+/* Cada bloco de informação */
+.info-item {
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid rgba(168,85,247,.25);
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    transition: .3s;
+}
+
+/* Efeito ao passar o mouse */
+.info-item:hover {
+
+    border-color: var(--cor-roxa);
+
+    transform: translateY(-4px);
+    /* Move levemente para cima */
+}
+
+/* Nome do atributo */
+.label {
+
+    display: block;
+
+    color: var(--cor-roxa-clara);
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+    /* Deixa todas as letras maiúsculas */
+
+    letter-spacing: 2px;
+    /* Espaçamento entre letras */
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+/* Valor da informação */
+.valor {
+
+    color: var(--cor-texto);
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+/* =========================
+  RESPONSIVO DO MODAL
+  Ajustes para telas menores
+========================= */
+
+@media (max-width: 700px) {
+
+    /* Informações passam para apenas uma coluna */
+    #modalInfo {
+
+        grid-template-columns: 1fr;
+    }
+
+    /* Diminui o tamanho do título */
+    #modalTitulo {
+
+        font-size: 34px;
+    }
+
+    /* Reduz o tamanho dos valores */
+    .valor {
+
+        font-size: 18px;
+    }
+
+    /* Reduz o tamanho da descrição */
+    #modalDescricao {
+
+        font-size: 18px;
+    }
+}
+
+/* =========================
+  ANIMAÇÃO
+  Efeito de abertura do modal
+========================= */
+
+@keyframes zoom {
+
+    from {
+
+        opacity: 0;
+        /* Começa invisível */
+
+        transform: scale(.85);
+        /* Começa menor */
+    }
+
+    to {
+
+        opacity: 1;
+        /* Termina totalmente visível */
+
+        transform: scale(1);
+        /* Volta ao tamanho normal */
+    }
+}
+
+/* =========================
+  GALERIA DO MODAL
+  Miniaturas dos dragões
+========================= */
+
+.galeria {
+    display: flex;
+    /* Organiza as imagens em linha */
+
+    justify-content: center;
+    /* Centraliza as imagens */
+
+    gap: 12px;
+    /* Espaço entre as imagens */
+
+    margin: 20px 0 25px;
+    /* Espaçamento externo */
+
+    flex-wrap: wrap;
+    /* Permite quebrar para outra linha */
+}
+
+/* Miniaturas */
+.galeria img {
+    width: 135px;
+    height: 105px;
+
+    object-fit: cover;
+    /* Preenche sem distorcer */
+
+    border-radius: 10px;
+    /* Cantos arredondados */
+
+    border: 2px solid var(--borda-roxa);
+    /* Borda roxa */
+
+    cursor: pointer;
+    /* Indica que a imagem é clicável */
+
+    transition: .25s;
+    /* Suaviza as animações */
+}
+
+/* Efeito ao passar o mouse */
+.galeria img:hover {
+    transform: scale(1.08);
+    /* Aumenta levemente a imagem */
+
+    border-color: var(--cor-roxa);
+    /* Intensifica a borda */
+
+    box-shadow: 0 0 15px var(--borda-roxa)
+    /* Adiciona um brilho */
+}
+
+/* =========================
+  GALERIA DAS CLASSES
+========================= */
+
+/* Grid das imagens da classe */
+.galeriaClasse {
+
+    display: grid;
+    /* Utiliza CSS Grid */
+
+    grid-template-columns: repeat(4, 175px);
+    /* Cria 4 colunas de 120px */
+
+    justify-content: center;
+    /* Centraliza o grid */
+
+    gap: 10px;
+    /* Espaço entre as imagens */
+
+    margin-top: 20px;
+    /* Espaço acima da galeria */
+}
+
+/* Imagens da galeria */
+.galeriaClasse img {
+
+    display: block;
+
+    width: 175px;
+    height: 155px;
+
+    margin: 0;
+
+    border-radius: 15px;
+    /* Arredonda os cantos */
+
+    object-fit: cover;
+    /* Preenche sem distorcer */
+
+    border: 2px solid var(--cor-roxa);
+    /* Borda roxa */
+
+    cursor: pointer;
+    /* Indica que a imagem pode ser clicada */
+
+    gap: 15px;
+    /* Esta propriedade não tem efeito em imagens e pode ser removida */
+}
+
+/* =========================
+  FOTO AMPLIADA
+========================= */
+
+#fotoGrande {
+  border-radius: 15px;
+  /* Arredonda os cantos */
+
+  border: 2px solid var(--cor-roxa);
+  /* Adiciona uma borda roxa */
+
+  box-shadow: 0 0 30px var(--cor-roxa);
+  /* Adiciona um brilho ao redor da imagem */
+}
