@@ -838,31 +838,126 @@ footer {
   Ajustes para telas menores
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width:700px){
 
-    /* Informações passam para apenas uma coluna */
-    #modalInfo {
+    /* HEADER */
 
-        grid-template-columns: 1fr;
+    header{
+        height:80px;
+        padding:0 20px;
     }
 
-    /* Diminui o tamanho do título */
-    #modalTitulo {
-
-        font-size: 34px;
+    .topo{
+        gap:10px;
+        font-size:1.2rem;
     }
 
-    /* Reduz o tamanho dos valores */
-    .valor {
-
-        font-size: 18px;
+    .img{
+        width:50px;
     }
 
-    /* Reduz o tamanho da descrição */
-    #modalDescricao {
-
-        font-size: 18px;
+    nav{
+        display:none;
     }
+
+    /* HERO */
+
+    .hero{
+        justify-content:center;
+        text-align:center;
+        padding:0 20px;
+    }
+
+    .hero-content{
+        max-width:100%;
+    }
+
+    .subtitulo{
+        font-size:32px;
+    }
+
+    .descricao{
+        font-size:18px;
+    }
+
+    /* SEÇÕES */
+
+    .dragons-grid,
+    .personagens{
+        padding:50px 15px;
+        grid-template-columns:1fr;
+    }
+
+    /* MODAL */
+
+    .modal{
+        padding:15px;
+    }
+
+    .modal-content{
+        width:95%;
+        padding:20px;
+    }
+
+    #modalTitulo{
+        font-size:34px;
+    }
+
+    #classeTitulo{
+        font-size:32px;
+    }
+
+    #modalDescricao,
+    #classeDescricao{
+        font-size:18px;
+    }
+
+    #modalInfo{
+        grid-template-columns:1fr;
+    }
+
+    .valor{
+        font-size:18px;
+    }
+
+    /* IMAGENS */
+
+    #modalImagem{
+        max-height:40vh;
+    }
+
+    #classeImagem{
+        width:180px;
+        height:180px;
+    }
+
+    /* GALERIA DOS DRAGÕES */
+
+    .galeria img{
+        width:90px;
+        height:70px;
+    }
+
+    /* GALERIA DAS CLASSES */
+
+    .galeriaClasse{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .galeriaClasse img{
+        width:100%;
+        height:130px;
+    }
+
+    /* BOTÕES FECHAR */
+
+    .close,
+    .closeClasse,
+    .closeFoto{
+        font-size:32px;
+    }
+
 }
 
 /* =========================
