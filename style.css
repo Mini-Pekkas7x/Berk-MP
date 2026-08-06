@@ -894,10 +894,11 @@ footer {
         padding:15px;
     }
 
-    .modal-content{
-        width:95%;
-        padding:20px;
-    }
+    .modal-content {
+    width: 95%;
+    max-width: 100%;
+    padding: 20px;
+}
 
     #modalTitulo{
         font-size:34px;
@@ -926,9 +927,9 @@ footer {
         max-height:40vh;
     }
 
-    #classeImagem{
-        width:180px;
-        height:180px;
+    #classeImagem {
+    width: min(180px, 70vw);
+    height: min(180px, 70vw);
     }
 
     /* GALERIA DOS DRAGÕES */
@@ -939,24 +940,6 @@ footer {
     }
 
     /* GALERIA DAS CLASSES */
-
-    .galeriaClasse{
-
-    grid-template-columns:repeat(2, minmax(0,1fr));
-
-    gap:10px;
-
-    width:100%;
-    }
-
-
-  .galeriaClasse img{
-
-      width:100%;
-
-      height:120px;
-
-    }
 
     /* BOTÕES FECHAR */
 
@@ -1055,47 +1038,25 @@ footer {
 
 /* Grid das imagens da classe */
 .galeriaClasse {
-
     display: grid;
-    /* Utiliza CSS Grid */
-
-    grid-template-columns: repeat(4, 175px);
-    /* Cria 4 colunas de 120px */
-
-    justify-content: center;
-    /* Centraliza o grid */
-
-    gap: 10px;
-    /* Espaço entre as imagens */
-
-    margin-top: 20px;
-    /* Espaço acima da galeria */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto 0;
 }
 
 /* Imagens da galeria */
 .galeriaClasse img {
-
     display: block;
-
-    width: 175px;
-    height: 155px;
-
+    width: 100%;
+    height: clamp(120px, 20vw, 155px);
     margin: 0;
-
     border-radius: 15px;
-    /* Arredonda os cantos */
-
     object-fit: cover;
-    /* Preenche sem distorcer */
-
     border: 2px solid var(--cor-roxa);
-    /* Borda roxa */
-
     cursor: pointer;
-    /* Indica que a imagem pode ser clicada */
-
-    gap: 15px;
-    /* Esta propriedade não tem efeito em imagens e pode ser removida */
+    transition: .25s;
 }
 
 /* =========================
